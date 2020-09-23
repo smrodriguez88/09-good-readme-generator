@@ -28,9 +28,3 @@
   
   ## Questions
   For questions please contact Steve Rodriguez (smrodriguez88@gmail.com)
-
-  ## Review
-
-  * Video Demonstration - 09-good-readme-generator - https://youtu.be/wOpXfhNFcdE
-
-  * Github Repository - 09-good-readme-generator - https://github.com/smrodriguez88/09-good-readme-generator
