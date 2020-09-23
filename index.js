@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const gm = require("./utils/generateMarkdown")
 
 // array of questions for user
 const questions = [
@@ -24,7 +25,7 @@ const questions = [
         name: "pUsage"
     },
     {
-        type: "checkbox",
+        type: "list",
         message: "Select a license for your application:",
         name: "pLicense",
         choices: [
@@ -46,20 +47,22 @@ const questions = [
     }
 ];
 
-inquirer.prompt(questions).then((response) => {
-    console.log(response)
-})
-
-
 
 // function to write README file
-// function writeToFile(fileName, data) {
-// }
+function writeToFile(fileName, data) {
+    markDown = gm(data)
+    console.log(markDown)
+    // fs.writeFileSync(fileName, markDown)
+}
 
 // function to initialize program
-// function init() {
-
-// }
+function init(questions) {
+    inquirer.prompt(questions).then((response) => {
+        console.log(response)
+        writeToFile("README.md", response)
+    });
+    
+};
 
 // function call to initialize program
-// init();
+init(questions);
